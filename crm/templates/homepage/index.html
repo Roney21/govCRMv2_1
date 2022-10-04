@@ -1,6 +1,10 @@
 HELLO WORLD!
 <body>
-    <table>
-        {{ form }}
-    </table>
+<table>
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <input type="file" name="file"> {{ form.as_p }} </input>
+        <button type="submit">Submit</button>
+    </form>
+</table>
 </body>
